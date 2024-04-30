@@ -1,0 +1,49 @@
+// IMAGE STRUCTURE
+@mixin aspect-ratio($x: 1, $y: 1, $w: 100%, $max: 100%) {
+  position: relative;
+  display: block;
+  aspect-ratio: $x / $y;
+  width: $w;
+  overflow: hidden;
+  max-width: $max;
+}
+
+// SCREEN MEDIA
+@mixin media($query...) {
+  @include medias('screen', $query...) {
+    @content;
+  }
+}
+
+// PX to REM
+@function rem($pxValue, $unit: 1rem) {
+  @return ($pxValue / 16px) * $unit;
+}
+
+// POSITION CENTER
+@mixin center($axis: 'both', $position: absolute) {
+  position: $position;
+
+  @if $axis== 'y' {
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  @if $axis== 'x' {
+    left: 50%;
+    translate: -50%;
+  }
+
+  @if $axis== 'both' {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+
+// CLAMP FUNCTION
+@function clampy($min, $max, $min-vw: 450px, $max-vw: 1500px) {
+  $slope: (rem($max) - rem($min)) / (rem($max-vw) - rem($min-vw));
+  $y: -1 * rem($min-vw) * $slope + rem($min);
+  @return clamp(rem($min), #{round($y * 100) / 100} + calc(#{$slope} * 100vw), rem($max));
+}

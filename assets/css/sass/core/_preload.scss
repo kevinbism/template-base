@@ -1,0 +1,13 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.lazied {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}

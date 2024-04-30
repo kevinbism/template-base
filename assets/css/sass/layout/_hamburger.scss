@@ -1,0 +1,104 @@
+.hamburger {
+  position: relative;
+  cursor: pointer;
+  column-gap: rem(10px);
+
+  &-box {
+    position: relative;
+    width: rem(35px);
+    height: rem(30px);
+    overflow: hidden;
+  }
+
+  &__label {
+    font-size: rem(20px);
+    color: #fff;
+    transition: color 0.75s var(--cubic-smooth);
+
+    .scrolled & {
+      color: var(--black-color);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    right: 0;
+    width: rem(35px);
+    height: rem(1px);
+    background-color: var(--secondary-color);
+    transition: transform 0.3s cubic-bezier(0.34, 0.615, 0.4, 0.985),
+      background-color 0.5s var(--cubic) 0s, width 0.5s var(--cubic) 0s;
+
+    &:first-of-type {
+      top: rem(10px);
+      width: rem(28px);
+      transition-delay: 0.3s;
+    }
+
+    &:nth-of-type(2) {
+      top: rem(14px);
+      transition-delay: 0.4s;
+    }
+
+    &:nth-of-type(3) {
+      top: rem(19px);
+      width: rem(28px);
+      transition-delay: 0.5s;
+    }
+
+    &:nth-of-type(4),
+    &:nth-of-type(5) {
+      top: rem(14px);
+      transform: rotate(-45deg) translateX(130%);
+      transition: transform 0.3s cubic-bezier(0.65, 0.025, 0.67, 0.36) 0s,
+        background-color 0.5s var(--cubic-super-smooth) 0s;
+    }
+
+    &:nth-of-type(5) {
+      transform: rotate(45deg) translateX(130%);
+      transition-delay: 0.1s;
+    }
+
+    // Hover Menu
+    .hamburger:hover &:is(:first-of-type, :nth-of-type(3)) {
+      width: rem(35px);
+    }
+
+    // Open Menu
+    .hamburger--open &:first-of-type,
+    .hamburger--open &:nth-of-type(2),
+    .hamburger--open &:nth-of-type(3) {
+      transform: translateX(102%);
+      transition: transform 0.27s cubic-bezier(0.65, 0.025, 0.67, 0.36), width 0.5s var(--cubic);
+    }
+
+    .hamburger--open &:first-of-type {
+      transition-delay: 0.2s;
+    }
+
+    .hamburger--open &:nth-of-type(2) {
+      transition-delay: 0.1s;
+    }
+
+    .hamburger--open &:nth-of-type(3) {
+      transition-delay: 0s;
+    }
+
+    .hamburger--open &:nth-of-type(4),
+    .hamburger--open &:nth-of-type(5) {
+      transition: transform 0.3s cubic-bezier(0.34, 0.615, 0.4, 0.985),
+        right 0.2s cubic-bezier(0.34, 0.615, 0.4, 0.985),
+        background-color 0.5s var(--cubic-super-smooth) 0s;
+    }
+
+    .hamburger--open &:nth-of-type(4) {
+      transition-delay: 0.5s;
+      transform: translateX(0) rotate(-45deg);
+    }
+
+    .hamburger--open &:nth-of-type(5) {
+      transition-delay: 0.6s;
+      transform: translateX(0) rotate(45deg);
+    }
+  }
+}

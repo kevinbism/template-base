@@ -1,0 +1,30 @@
+// ACTION MENU
+.action {
+  &-menu {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: rem(100px);
+    z-index: 200;
+    background-color: var(--primary-color);
+
+    @include media('>tablet-xsmall') {
+      display: none;
+    }
+
+    &__row {
+      height: 100%;
+      padding-inline: rem(35px);
+    }
+
+    &__item {
+      position: relative;
+      text-align: center;
+    }
+
+    &__icon {
+      font-size: rem(25px);
+    }
+  }
+}

@@ -1,0 +1,175 @@
+.box {
+  position: relative;
+
+  &-sized {
+    width: 100%;
+    max-width: rem(1520px);
+    margin: 0 auto;
+  }
+}
+
+.p-rel {
+  position: relative;
+}
+
+.p-abs {
+  position: absolute;
+}
+
+.title {
+  font-family: var(--font-title);
+  text-wrap: balance;
+}
+
+.subtitle {
+  text-wrap: balance;
+  font-family: var(--font-title);
+}
+
+.text {
+  text-wrap: pretty;
+
+  * + & {
+    margin-top: rem(30px);
+  }
+
+  &:empty,
+  &:only-child {
+    margin-top: 0;
+  }
+
+  h3 {
+    @extend .subtitle;
+    font-size: 0.8em;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-white {
+    color: #fff;
+  }
+
+  &-center {
+    text-align: center;
+  }
+}
+
+.link {
+  display: inline-block;
+  margin-top: rem(30px);
+}
+
+.col-50 {
+  @include media('>mobile') {
+    column-count: 2;
+    column-gap: rem(60px);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: none;
+
+  @include media('>mobile') {
+    display: block;
+  }
+}
+
+.pulsanti_LG3 a {
+  @extend .link;
+}
+
+.flex {
+  display: flex;
+
+  &-inline {
+    display: inline-flex;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+
+    &-tablet {
+      @include media('<=tablet') {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-mobile {
+      @include media('<=mobile') {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  &-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-jc {
+    &-sa {
+      justify-content: space-around;
+    }
+
+    &-sb {
+      justify-content: space-between;
+    }
+
+    &-se {
+      justify-content: space-evenly;
+    }
+
+    &-c {
+      justify-content: center;
+    }
+
+    &-start {
+      justify-content: flex-start;
+    }
+
+    &-end {
+      justify-content: flex-end;
+    }
+  }
+
+  &-ai {
+    &-sa {
+      align-items: space-around;
+    }
+
+    &-sb {
+      align-items: space-between;
+    }
+
+    &-c {
+      align-items: center;
+    }
+
+    &-start {
+      align-items: flex-start;
+    }
+
+    &-end {
+      align-items: flex-end;
+    }
+  }
+
+  &-column {
+    flex-direction: column;
+
+    &-reverse {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
