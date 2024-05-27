@@ -3,7 +3,7 @@
   position: relative;
 
   @include media('<=mobile') {
-    gap: 10px;
+    gap: rem(10px);
   }
 
   &__row {

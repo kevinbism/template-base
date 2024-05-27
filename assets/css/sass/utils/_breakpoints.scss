@@ -1,0 +1,27 @@
+// MEDIA QUERIES
+$breakpoints: (
+  // 400px
+  'mobile-xsmall': 25em,
+  // 512px
+  'mobile-small': 32em,
+  // 768px
+  'mobile': 48em,
+  // 848px
+  'tablet-xsmall': 53em,
+  // 976px
+  'tablet-small': 61em,
+  // 1024px
+  'tablet': 64em,
+  // 1152px
+  'desktop-xsmall': 72em,
+  // 1264px
+  'desktop-small': 79em,
+  // 1360px
+  'desktop': 85em,
+  // 1440px
+  'desktop-large': 90em,
+  // 1600px
+  'desktop-xlarge': 100em,
+  // 1920px
+  'desktop-xxlarge': 120em
+);
