@@ -3,6 +3,8 @@
 @import 'sass/core/all';
 @import 'sass/header/header';
 @import 'sass/header/hamburger';
-@import 'sass/header/menu';
+@import 'sass/header/menu-header';
+@import 'sass/header/menu-language';
 @import 'sass/header/qr';
 @import 'sass/header/gallery-top';
+@import '../js/libs/swiper/package/swiper.scss';

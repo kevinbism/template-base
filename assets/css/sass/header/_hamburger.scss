@@ -13,11 +13,6 @@
   &__label {
     font-size: rem(20px);
     color: #fff;
-    transition: color 0.75s var(--cubic-smooth);
-
-    .scrolled & {
-      color: var(--black-color);
-    }
   }
 
   &__line {
