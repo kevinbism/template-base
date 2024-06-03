@@ -1,66 +1,56 @@
 <?php
 global $cms;
 
-src('layouts.header');
+src('header.Header');
 
 echo OPEN_MAIN;
 
 if ($cms->modello == "Home Page") {
 
-    src('pages.home');
+    src('models.home-page');
 
 } else {
 
     if ($cms->modello == 'Interne') {
-        src('pages.base');
+        src('models.page');
     }
 
     if ($cms->modello == 'Interna Avanzata') {
-        src('pages.advanced');
+        src('models.advanced');
     }
 
     if ($cms->modello == 'Camere') {
-        src('pages.rooms');
+        src('models.rooms');
     }
 
     if ($cms->modello == 'Interna Camere') {
-        src('pages.room');
+        src('models.room-page');
     }
 
     if ($cms->modello == 'Servizi') {
-        src('pages.services');
-    }
-
-    if ($cms->modello == 'Ristorante') {
-        src('pages.restaurant');
-    }
-
-    if ($cms->modello == 'Interna Ristorante') {
-        src('pages.restaurantPage');
+        src('models.services');
     }
 
     if ($cms->modello == 'Location') {
-        src('pages.location');
+        src('models.location');
     }
 
     if ($cms->modello == 'Form') {
-        src('pages.form');
+        src('models.form');
     }
 
     if ($cms->modello == 'Gallery') {
-        src('pages.gallery');
+        src('models.gallery');
     }
 
     if ($cms->modello == 'Offerte') {
-        src('pages.Offers.list');
+        src('models.offers');
     }
 }
 
 if ($cms->modello != 'Offerte') {
-    src('pages.Offers.special');
+    src('components.OffersSlider');
 }
-
-src('components.Instagram');
 
 echo CLOSE_MAIN;
 ?>

@@ -1,18 +1,17 @@
 <?php
 global $cms;
-$disable_barcode = $disable_barcode ?? false;
 ?>
 
 <section class="page p-rel <?= $class ?>">
   <div class="wrapper box-sized">
     <div class="breadcrumb">
-      <?= $cms->getBreadCrumb("list flex flex-wrap flex-ai-c", "item") ?>
+      <?= $cms->getBreadCrumb("breadcrumb-list flex flex-wrap flex-ai-c", "breadcrumb-item") ?>
     </div>
     <?php
     switch ($type) {
       case 'center':
     ?>
-    <div class="content text-center">
+    <div class="page-content text-center">
       <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
       <h1 class="title"><?= $cms->getTitolo() ?></h1>
       <div class="text"><?= $cms->getTesto() ?></div>
@@ -23,7 +22,7 @@ $disable_barcode = $disable_barcode ?? false;
     break;
     default:
     ?>
-    <div class="content">
+    <div class="page-content">
       <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
       <h1 class="title"><?= $cms->getTitolo() ?></h1>
       <div class="text"><?= $cms->getTesto() ?></div>
@@ -32,8 +31,4 @@ $disable_barcode = $disable_barcode ?? false;
     </div>
     <?php } ?>
   </div>
-
-  <?php if (!$disable_barcode) {
-    src('components.Barcode', ['class' => 'barcode--white']);
-  } ?>
 </section>

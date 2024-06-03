@@ -53,10 +53,5 @@ if ($cms->getVar('type-gallery') == 'Normale' || $cms->getVar('type-gallery') ==
   </figure>
   <?php $i++; }
   } ?>
-
-  <div class="gallery-content">
-    <h3 class="gallery-content__title subtitle text-white"><?= $images[0]['titolo'] ?></h3>
-    <h2 class="gallery-content__subtitle title text-white"><?= $images[0]['sottotitolo'] ?></h2>
-  </div>
 </section>
 <?php } ?>

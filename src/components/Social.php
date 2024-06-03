@@ -37,12 +37,12 @@ $social = array(
 ?>
 
 <div class="social <?= $class ?>">
-  <ul class="social__row flex flex-jc-c">
+  <ul class="social-list flex flex-jc-c">
     <?php
     foreach ($social as $i => $s) {
       if ($s['link']) {
     ?>
-    <li class="social__item">
+    <li class="social-item">
       <a class="social__link" href="<?= $s['link'] ?>" target="_blank">
         <i class="fa-brands <?= $s['icona'] ?> fa-fw social__icon"></i>
       </a>
