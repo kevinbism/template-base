@@ -20,7 +20,7 @@ $gallery = $cms->getModulo("Gallery");
     <?php if(count($gallery['immagini']) > 0) { ?>
     <ul class="gallery-page-main">
       <?php foreach ($gallery['immagini'] as $img){ ?>
-      <li class="gallery-page-main__item cat_<?= $img['id_categoria']; ?>">
+      <li class="gallery-page-item cat_<?= $img['id_categoria']; ?>">
         <a data-fslightbox data-type="<?= ($img['video']) ? 'video' : 'image' ?>"
           href="<?= ($img['video']) ? $img['video'] : $cms->getImg($img['files']); ?>" rel="gallery-page-main">
           <?php src('components.Image', ['class' => 'gallery-page-image']); ?>
