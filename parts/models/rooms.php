@@ -1,7 +1,5 @@
 <?php
 // Modello Camere generico
-global $cms;
-
 src('content.content-page');
 ?>
 

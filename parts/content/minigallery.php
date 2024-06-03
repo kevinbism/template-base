@@ -1,6 +1,5 @@
 <?php
-global $cms;
-$minigallery = $cms->getModulo('Minigallery');
+$minigallery = $this->getModulo('Minigallery');
 
 if (count($minigallery) > 0) {
 ?>
@@ -10,7 +9,7 @@ if (count($minigallery) > 0) {
     <div class="swiper-wrapper">
       <?php foreach ($minigallery as $img) { ?>
       <div class="swiper-slide">
-        <div data-src="<?= $cms->getImg($img['files']) ?>" class="minigallery-light">
+        <div data-src="<?= $this->getImg($img['files']) ?>" class="minigallery-light">
           <?php src('content.image', ['img' => $img, 'class' => 'minigallery-image']); ?>
         </div>
       </div>

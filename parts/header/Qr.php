@@ -1,14 +1,14 @@
 <?php
-global $cms, $action_be;
+global $action_be;
 ?>
 
 <!-- Quick Reserve -->
 <div class="qr">
   <form action="https://www.blastnessbooking.com/<?= $action_be ?>" id="qr-form" class="qr-form" method="get">
-    <input type="hidden" name="id_albergo" value="<?= $cms->getInfoStruttura('id_albergo', $cms->id_struttura); ?>">
-    <input type="hidden" name="dc" value="<?= $cms->getInfoStruttura('dc', $cms->id_struttura) ?>">
-    <input type="hidden" name="id_stile" value="<?= $cms->getInfoStruttura('id_stile', $cms->id_struttura); ?>">
-    <input type="hidden" name="lingua_int" value="<?= $cms->sigla_lingua; ?>">
+    <input type="hidden" name="id_albergo" value="<?= $this->getInfoStruttura('id_albergo', $this->id_struttura); ?>">
+    <input type="hidden" name="dc" value="<?= $this->getInfoStruttura('dc', $this->id_struttura) ?>">
+    <input type="hidden" name="id_stile" value="<?= $this->getInfoStruttura('id_stile', $this->id_struttura); ?>">
+    <input type="hidden" name="lingua_int" value="<?= $this->sigla_lingua; ?>">
     <input type="hidden" name="gg" id="gg" value="">
     <input type="hidden" name="mm" id="mm" value="">
     <input type="hidden" name="aa" id="aa" value="">
@@ -26,18 +26,19 @@ global $cms, $action_be;
           <span class="qr-m qr-m-out">Gen</span>
           <span class="qr-y qr-y-out">2024</span>
         </div>
-        <input class="qr-input" type="text" id="calendario" data-mindate="<?= $cms->getImpostazione('data_apertura') ?>"
+        <input class="qr-input" type="text" id="calendario"
+          data-mindate="<?= $this->getImpostazione('data_apertura') ?>"
           readonly>
       </div>
       <div class="qr-item">
         <label for="tot_adulti" class="qr-label text-center">
           <span class="qr-label__number">2</span>
-          <span class="qr-label__text"><?= $cms->__('adulti') ?></span>
+          <span class="qr-label__text"><?= $this->__('adulti') ?></span>
           <select name="tot_adulti" id="tot_adulti" class="qr-select">
-            <?php for ($i = 1; $i <= $cms->info_sito('preset_adulti'); $i++) { ?>
+            <?php for ($i = 1; $i <= $this->info_sito('preset_adulti'); $i++) { ?>
             <option <?= ($i == 2) ? 'selected="selected"' : '' ?>
-              data-text="<?= ($i == 1) ? $cms->__('adulto') : $cms->__('adulti') ?>" value="<?= $i ?>"><?= $i ?>
-              <?= ($i == 1) ? $cms->__('adulto') : $cms->__('adulti') ?></option>
+              data-text="<?= ($i == 1) ? $this->__('adulto') : $this->__('adulti') ?>" value="<?= $i ?>"><?= $i ?>
+              <?= ($i == 1) ? $this->__('adulto') : $this->__('adulti') ?></option>
             <?php } ?>
           </select>
         </label>
@@ -45,12 +46,12 @@ global $cms, $action_be;
       <div class="qr-item">
         <label for="tot_bambini" class="qr-label text-center">
           <span class="qr-label__number">0</span>
-          <span class="qr-label__text"><?= $cms->__('bambini') ?></span>
+          <span class="qr-label__text"><?= $this->__('bambini') ?></span>
           <select name="tot_bambini" id="tot_bambini" class="qr-select">
-            <?php for ($i = 0; $i <= $cms->info_sito('preset_bambini'); $i++) { ?>
+            <?php for ($i = 0; $i <= $this->info_sito('preset_bambini'); $i++) { ?>
             <option <?= ($i == 0) ? 'selected="selected"' : '' ?>
-              data-text="<?= ($i == 1) ? $cms->__('bambino') : $cms->__('bambini') ?>" value="<?= $i ?>"><?= $i ?>
-              <?= ($i == 1) ? $cms->__('bambino') : $cms->__('bambini') ?></option>
+              data-text="<?= ($i == 1) ? $this->__('bambino') : $this->__('bambini') ?>" value="<?= $i ?>"><?= $i ?>
+              <?= ($i == 1) ? $this->__('bambino') : $this->__('bambini') ?></option>
             <?php } ?>
           </select>
         </label>
@@ -58,20 +59,20 @@ global $cms, $action_be;
       <div class="qr-item">
         <label for="tot_camere" class="qr-label text-center">
           <span class="qr-label__number">1</span>
-          <span class="qr-label__text"><?= $cms->__('Camera') ?></span>
+          <span class="qr-label__text"><?= $this->__('Camera') ?></span>
           <select name="tot_camere" id="tot_camere" class="qr-select">
-            <?php for ($i = 1; $i <= $cms->info_sito('preset_camere'); $i++) { ?>
+            <?php for ($i = 1; $i <= $this->info_sito('preset_camere'); $i++) { ?>
             <option <?= ($i == 1) ? 'selected="selected"' : '' ?>
-              data-text="<?= ($i == 1) ? $cms->__('camera') : $cms->__('camere') ?>" value="<?= $i ?>"><?= $i ?>
-              <?= ($i == 1) ? $cms->__('camera') : $cms->__('camere') ?></option>
+              data-text="<?= ($i == 1) ? $this->__('camera') : $this->__('camere') ?>" value="<?= $i ?>"><?= $i ?>
+              <?= ($i == 1) ? $this->__('camera') : $this->__('camere') ?></option>
             <?php } ?>
           </select>
         </label>
       </div>
       <div class="qr-item qr-item--book flex flex-column flex-jc-c">
-        <button class="qr-book" type="submit"><?= $cms->__('prenota ora') ?></button>
+        <button class="qr-book" type="submit"><?= $this->__('prenota ora') ?></button>
         <a class="qr-link text-center"
-          href="<?= $cms->getLinkBooking("cancella_modifica") ?>"><?= $cms->__('Modifica/Cancella prenotazione') ?></a>
+          href="<?= $this->getLinkBooking("cancella_modifica") ?>"><?= $this->__('Modifica/Cancella prenotazione') ?></a>
       </div>
     </div>
   </form>

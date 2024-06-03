@@ -1,20 +1,16 @@
-<?php
-global $cms;
-?>
-
 <section class="page p-rel <?= $class ?>">
   <div class="wrapper box-sized">
     <div class="breadcrumb">
-      <?= $cms->getBreadCrumb("breadcrumb-list flex flex-wrap flex-ai-c", "breadcrumb-item") ?>
+      <?= $this->getBreadCrumb("breadcrumb-list flex flex-wrap flex-ai-c", "breadcrumb-item") ?>
     </div>
     <?php
     switch ($type) {
       case 'center':
     ?>
     <div class="page-content text-center">
-      <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
-      <h1 class="title"><?= $cms->getTitolo() ?></h1>
-      <div class="text"><?= $cms->getTesto() ?></div>
+      <h2 class="subtitle"><?= $this->getSottotitolo() ?></h2>
+      <h1 class="title"><?= $this->getTitolo() ?></h1>
+      <div class="text"><?= $this->getTesto() ?></div>
       <?php src('content.link-page'); ?>
       <?php src('landing.page-landing'); ?>
     </div>
@@ -23,9 +19,9 @@ global $cms;
     default:
     ?>
     <div class="page-content">
-      <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
-      <h1 class="title"><?= $cms->getTitolo() ?></h1>
-      <div class="text"><?= $cms->getTesto() ?></div>
+      <h2 class="subtitle"><?= $this->getSottotitolo() ?></h2>
+      <h1 class="title"><?= $this->getTitolo() ?></h1>
+      <div class="text"><?= $this->getTesto() ?></div>
       <?php src('content.link-page'); ?>
       <?php src('landing.page-landing'); ?>
     </div>

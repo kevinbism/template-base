@@ -1,13 +1,11 @@
 <?php
-global $cms;
-
-$map = $cms->getModulo('Mappa');
+$map = $this->getModulo('Mappa');
 
 if ($map) {
 ?>
 
 <section class="map p-rel">
-  <?= $cms->getMappa($map); ?>
+  <?= $this->getMappa($map); ?>
 </section>
 
 <?php } ?>

@@ -1,18 +1,17 @@
 <?php
-global $cms;
-$images = $cms->getModulo("Immagini header");
+$images = $this->getModulo("Immagini header");
 
-if ($cms->getVar('type-gallery') == 'Normale' || $cms->getVar('type-gallery') == 'Ridotta' || $cms->sub_classe == "landing") {
+if ($this->getVar('type-gallery') == 'Normale' || $this->getVar('type-gallery') == 'Ridotta' || $this->sub_classe == "landing") {
 ?>
 
 <!-- Gallery -->
 <section class="gallery">
   <?php if ($images[0]['video'] != '') { ?>
   <div class="gallery-video">
-    <?= $cms->getVideo($images[0]['video'],
+    <?= $this->getVideo($images[0]['video'],
       [
         'class' => 'gallery-video-container',
-        'poster' => $cms->getImg($images[0]['files'], '', true)
+        'poster' => $this->getImg($images[0]['files'], '', true)
       ],
       [
         'autoplay',
@@ -28,7 +27,7 @@ if ($cms->getVar('type-gallery') == 'Normale' || $cms->getVar('type-gallery') ==
   </div>
   <?php } else {
     if (count($images) == 0) {
-      $images = $cms->getBlocco("Gallery Top Default", $cms->array_strutture[0]);
+      $images = $this->getBlocco("Gallery Top Default", $this->array_strutture[0]);
       $images = $images['immagini'];
     }
 
@@ -36,7 +35,7 @@ if ($cms->getVar('type-gallery') == 'Normale' || $cms->getVar('type-gallery') ==
     foreach ($images as $image) {
     ?>
   <figure class="gallery-image <?= $i == 0 ? 'active' : '' ?>">
-    <?= $cms->getPicture($image['files'],
+    <?= $this->getPicture($image['files'],
       [
         'lazy' => false,
         'priority' => $i == 0,

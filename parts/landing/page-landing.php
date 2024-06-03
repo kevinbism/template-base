@@ -1,8 +1,7 @@
 <?php
-global $cms;
-$menu_landing = $cms->getMenuLanding();
+$menu_landing = $this->getMenuLanding();
 
-if ($cms->sub_classe == "landing") { ?>
+if ($this->sub_classe == "landing") { ?>
 <!-- MENU LANDING -->
 <nav class="page-landing">
   <ul class="page-landing__row">

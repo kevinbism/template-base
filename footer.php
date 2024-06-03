@@ -1,5 +1,3 @@
-<?php global $cms; ?>
-
 <footer class="footer p-rel">
   <div class="inner text-center">
     <h3 class="subtitle"><?= $cms->getInfoStruttura('nome_struttura') ?> -</h3>

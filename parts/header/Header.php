@@ -1,4 +1,4 @@
-<?php global $cms, $header_type; ?>
+<?php global $header_type; ?>
 <header class="header <?= $header_type; ?>">
   <?php src('header.menu-header'); ?>
   <?php src('header.qr'); ?>

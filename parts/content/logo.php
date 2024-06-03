@@ -1,16 +1,13 @@
-<?php
-global $cms;
-$classList = explode(' ', $class);
-?>
+<?php $classList = explode(' ', $class); ?>
 
-<a href="<?= $cms->getLinkHome() ?>" class="<?= implode(' ', $classList) ?>">
-  <?= $cms->getLogoP([
+<a href="<?= $this->getLinkHome() ?>" class="<?= implode(' ', $classList) ?>">
+  <?= $this->getLogoP([
       'file' => $fileLogo ?: 'logo',
       'priority' => $p ?: false,
       'class' => !$p ? 'lazy' : '',
       'lazy' => false,
       'classImg' => $classList[0].'__img',
-      'title' => $cms->getInfoStruttura('nome_struttura') . ' Logo',
+      'title' => $this->getInfoStruttura('nome_struttura') . ' Logo',
       'width' => $w,
       'height' => $h
     ]);

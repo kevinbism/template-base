@@ -1,10 +1,7 @@
-<?php
-global $cms;
-$classList = explode(' ', $class);
-?>
+<?php $classList = explode(' ', $class); ?>
 
 <figure class="<?= implode(' ', $classList) ?>" <?= $attr ?>>
-  <?= $cms->getPicture($img['files'],
+  <?= $this->getPicture($img['files'],
     [
       'priority' => false,
       'class' => 'lazy',

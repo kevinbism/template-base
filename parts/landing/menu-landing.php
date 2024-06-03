@@ -1,9 +1,8 @@
 <?php
-global $cms;
-$menu_landing = $cms->getMenuLanding();
-$lg = $cms->getMenu('Menu landing');
+$menu_landing = $this->getMenuLanding();
+$lg = $this->getMenu('Menu landing');
 
-if ((count($menu_landing) > 0 || count($lg) > 0) && ($cms->modello == 'Home Page Strutture' || $cms->modello == 'Home Page')) {
+if ((count($menu_landing) > 0 || count($lg) > 0) && ($this->modello == 'Home Page Strutture' || $this->modello == 'Home Page')) {
 ?>
 <nav class="footer-menu-landing">
   <ul class="footer-menu-landing__row flex flex-jc-c">

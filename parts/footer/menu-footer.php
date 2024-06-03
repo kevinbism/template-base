@@ -1,6 +1,5 @@
 <?php
-global $cms;
-$menu = $cms->getMenu($cms->menu_bottom);
+$menu = $this->getMenu($this->menu_bottom);
 if (count($menu) > 0) {
 ?>
 

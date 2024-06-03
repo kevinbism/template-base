@@ -1,6 +1,5 @@
-<?php global $cms; ?>
 <!DOCTYPE html>
-<html lang="<?= $cms->trova_lingua($cms->id_lingua, '2_caratteri'); ?>">
+<html lang="<?= $this->trova_lingua($this->id_lingua, '2_caratteri'); ?>">
 
 <head>
   <meta charset="UTF-8">
@@ -9,10 +8,10 @@
   <meta name="msapplication-navbutton-color" content="">
   <meta name="apple-mobile-web-app-status-bar-style" content="">
   <?php
-  $cms->cube_head();
+  $this->cube_head();
   src('utils.preload');
-  $cms->printInlineCSS(['/assets/css/dist/header.min.css'], array('newAssetsFolder' => '/assets/css/newassets'));
+  $this->printInlineCSS(['/assets/css/dist/header.min.css'], array('newAssetsFolder' => '/assets/css/newassets'));
   ?>
 </head>
 
-<body class="<?= $cms->modello == "Home Page" ? 'home' : 'internal'; ?>">
+<body class="<?= $this->modello == "Home Page" ? 'home' : 'internal'; ?>">

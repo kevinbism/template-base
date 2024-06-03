@@ -1,54 +1,53 @@
 <?php
-global $cms;
 
 src('header.Header');
 
 echo OPEN_MAIN;
 
-if ($cms->modello == "Home Page") {
+if ($this->modello == "Home Page") {
 
     src('models.home-page');
 
 } else {
 
-    if ($cms->modello == 'Interne') {
+    if ($this->modello == 'Interne') {
         src('models.page');
     }
 
-    if ($cms->modello == 'Interna Avanzata') {
+    if ($this->modello == 'Interna Avanzata') {
         src('models.advanced');
     }
 
-    if ($cms->modello == 'Camere') {
+    if ($this->modello == 'Camere') {
         src('models.rooms');
     }
 
-    if ($cms->modello == 'Interna Camere') {
+    if ($this->modello == 'Interna Camere') {
         src('models.room-page');
     }
 
-    if ($cms->modello == 'Servizi') {
+    if ($this->modello == 'Servizi') {
         src('models.services');
     }
 
-    if ($cms->modello == 'Location') {
+    if ($this->modello == 'Location') {
         src('models.location');
     }
 
-    if ($cms->modello == 'Form') {
+    if ($this->modello == 'Form') {
         src('models.form');
     }
 
-    if ($cms->modello == 'Gallery') {
+    if ($this->modello == 'Gallery') {
         src('models.gallery');
     }
 
-    if ($cms->modello == 'Offerte') {
+    if ($this->modello == 'Offerte') {
         src('models.offers');
     }
 }
 
-if ($cms->modello != 'Offerte') {
+if ($this->modello != 'Offerte') {
     src('content.offers-slider');
 }
 
