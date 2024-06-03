@@ -52,12 +52,6 @@ function getHeaderTypeBasedOnGalleryType($galleryType) {
 }
 
 
-function src ($source, $array = null) {
-    global $cms;
-    return $cms->cube_parts("src.$source", $array);
-}
-
-
 function is_landing() {
     global $cms;
     return $cms->sub_classe == 'landing';
