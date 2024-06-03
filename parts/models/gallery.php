@@ -3,7 +3,7 @@ global $cms;
 $gallery = $cms->getModulo("Gallery");
 ?>
 
-<?php src('components.content-page'); ?>
+<?php src('content.content-page'); ?>
 
 <section class="gallery-page">
   <div class="gallery-page-wrapper box-sized">
@@ -23,7 +23,7 @@ $gallery = $cms->getModulo("Gallery");
       <li class="gallery-page-item cat_<?= $img['id_categoria']; ?>">
         <a data-fslightbox data-type="<?= ($img['video']) ? 'video' : 'image' ?>"
           href="<?= ($img['video']) ? $img['video'] : $cms->getImg($img['files']); ?>" rel="gallery-page-main">
-          <?php src('components.image', ['class' => 'gallery-page-image']); ?>
+          <?php src('content.image', ['class' => 'gallery-page-image']); ?>
         </a>
       </li>
       <?php } ?>

@@ -1,4 +1,4 @@
 <?php
-src('components.content-page');
-src('components.map');
+src('content.content-page');
+src('content.map');
 ?>

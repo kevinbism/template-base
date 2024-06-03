@@ -11,7 +11,7 @@ if (count($minigallery) > 0) {
       <?php foreach ($minigallery as $img) { ?>
       <div class="swiper-slide">
         <div data-src="<?= $cms->getImg($img['files']) ?>" class="minigallery-light">
-          <?php src('components.Image', ['img' => $img, 'class' => 'minigallery-image']); ?>
+          <?php src('content.image', ['img' => $img, 'class' => 'minigallery-image']); ?>
         </div>
       </div>
       <?php } ?>

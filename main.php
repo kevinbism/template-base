@@ -49,7 +49,7 @@ if ($cms->modello == "Home Page") {
 }
 
 if ($cms->modello != 'Offerte') {
-    src('components.OffersSlider');
+    src('content.offers-slider');
 }
 
 echo CLOSE_MAIN;

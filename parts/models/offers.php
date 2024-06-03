@@ -3,7 +3,7 @@ global $cms, $strutture;
 $offers = $cms->getModulo("Offerte");
 ?>
 
-<?php src('components.content-page'); ?>
+<?php src('content.content-page'); ?>
 
 <?php if (count($offers) > 0) { ?>
 <section class="offers">

@@ -1,4 +1,4 @@
 <?php
-src('components.content-page');
-src('components.minigallery');
+src('content.content-page');
+src('content.minigallery');
 ?>
