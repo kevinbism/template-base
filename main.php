@@ -1,54 +1,54 @@
 <?php
 
-src('header.Header');
+$this->cube_parts('parts.header.Header');
 
 echo OPEN_MAIN;
 
 if ($this->modello == "Home Page") {
 
-    src('models.home-page');
+    $this->cube_parts('parts.models.home-page');
 
 } else {
 
     if ($this->modello == 'Interne') {
-        src('models.page');
+        $this->cube_parts('parts.models.page');
     }
 
     if ($this->modello == 'Interna Avanzata') {
-        src('models.advanced');
+        $this->cube_parts('parts.models.advanced');
     }
 
     if ($this->modello == 'Camere') {
-        src('models.rooms');
+        $this->cube_parts('parts.models.rooms');
     }
 
     if ($this->modello == 'Interna Camere') {
-        src('models.room-page');
+        $this->cube_parts('parts.models.room-page');
     }
 
     if ($this->modello == 'Servizi') {
-        src('models.services');
+        $this->cube_parts('parts.models.services');
     }
 
     if ($this->modello == 'Location') {
-        src('models.location');
+        $this->cube_parts('parts.models.location');
     }
 
     if ($this->modello == 'Form') {
-        src('models.form');
+        $this->cube_parts('parts.models.form');
     }
 
     if ($this->modello == 'Gallery') {
-        src('models.gallery');
+        $this->cube_parts('parts.models.gallery');
     }
 
     if ($this->modello == 'Offerte') {
-        src('models.offers');
+        $this->cube_parts('parts.models.offers');
     }
 }
 
 if ($this->modello != 'Offerte') {
-    src('content.offers-slider');
+    $this->cube_parts('parts.content.offers-slider');
 }
 
 echo CLOSE_MAIN;

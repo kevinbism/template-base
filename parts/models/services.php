@@ -1,4 +1,4 @@
 <?php
-src('content.content-page');
-src('content.services');
+$this->cube_parts('parts.content.content-page');
+$this->cube_parts('parts.content.services');
 ?>

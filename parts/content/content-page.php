@@ -11,8 +11,8 @@
       <h2 class="subtitle"><?= $this->getSottotitolo() ?></h2>
       <h1 class="title"><?= $this->getTitolo() ?></h1>
       <div class="text"><?= $this->getTesto() ?></div>
-      <?php src('content.link-page'); ?>
-      <?php src('landing.page-landing'); ?>
+      <?php $this->cube_parts('parts.content.link-page'); ?>
+      <?php $this->cube_parts('parts.landing.page-landing'); ?>
     </div>
     <?php
     break;
@@ -22,8 +22,8 @@
       <h2 class="subtitle"><?= $this->getSottotitolo() ?></h2>
       <h1 class="title"><?= $this->getTitolo() ?></h1>
       <div class="text"><?= $this->getTesto() ?></div>
-      <?php src('content.link-page'); ?>
-      <?php src('landing.page-landing'); ?>
+      <?php $this->cube_parts('parts.content.link-page'); ?>
+      <?php $this->cube_parts('parts.landing.page-landing'); ?>
     </div>
     <?php } ?>
   </div>

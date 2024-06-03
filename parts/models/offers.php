@@ -3,7 +3,7 @@ global $strutture;
 $offers = $this->getModulo("Offerte");
 ?>
 
-<?php src('content.content-page'); ?>
+<?php $this->cube_parts('parts.content.content-page'); ?>
 
 <?php if (count($offers) > 0) { ?>
 <section class="offers">

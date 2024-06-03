@@ -1,6 +1,6 @@
 <?php
 // Modello Camere generico
-src('content.content-page');
+$this->cube_parts('parts.content.content-page');
 ?>
 
 <section class="rooms p-rel"></section>

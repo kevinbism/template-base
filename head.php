@@ -9,7 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="">
   <?php
   $this->cube_head();
-  src('utils.preload');
+  $this->cube_parts('parts.utils.preload');
   $this->printInlineCSS(['/assets/css/dist/header.min.css'], array('newAssetsFolder' => '/assets/css/newassets'));
   ?>
 </head>

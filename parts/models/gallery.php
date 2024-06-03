@@ -1,6 +1,6 @@
 <?php $gallery = $this->getModulo("Gallery"); ?>
 
-<?php src('content.content-page'); ?>
+<?php $this->cube_parts('parts.content.content-page'); ?>
 
 <section class="gallery-page">
   <div class="gallery-page-wrapper box-sized">
@@ -20,7 +20,7 @@
       <li class="gallery-page-item cat_<?= $img['id_categoria']; ?>">
         <a data-fslightbox data-type="<?= ($img['video']) ? 'video' : 'image' ?>"
           href="<?= ($img['video']) ? $img['video'] : $this->getImg($img['files']); ?>" rel="gallery-page-main">
-          <?php src('content.image', ['class' => 'gallery-page-image']); ?>
+          <?php $this->cube_parts('parts.content.image', ['class' => 'gallery-page-image']); ?>
         </a>
       </li>
       <?php } ?>

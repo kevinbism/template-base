@@ -10,7 +10,7 @@ if (count($minigallery) > 0) {
       <?php foreach ($minigallery as $img) { ?>
       <div class="swiper-slide">
         <div data-src="<?= $this->getImg($img['files']) ?>" class="minigallery-light">
-          <?php src('content.image', ['img' => $img, 'class' => 'minigallery-image']); ?>
+          <?php $this->cube_parts('parts.content.image', ['img' => $img, 'class' => 'minigallery-image']); ?>
         </div>
       </div>
       <?php } ?>
