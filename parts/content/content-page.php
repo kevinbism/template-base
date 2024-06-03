@@ -15,8 +15,8 @@ global $cms;
       <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
       <h1 class="title"><?= $cms->getTitolo() ?></h1>
       <div class="text"><?= $cms->getTesto() ?></div>
-      <?php src('components.LinkPage'); ?>
-      <?php src('utils.Landing.page'); ?>
+      <?php src('content.link-page'); ?>
+      <?php src('landing.page-landing'); ?>
     </div>
     <?php
     break;
@@ -26,8 +26,8 @@ global $cms;
       <h2 class="subtitle"><?= $cms->getSottotitolo() ?></h2>
       <h1 class="title"><?= $cms->getTitolo() ?></h1>
       <div class="text"><?= $cms->getTesto() ?></div>
-      <?php src('components.LinkPage'); ?>
-      <?php src('utils.Landing.page'); ?>
+      <?php src('content.link-page'); ?>
+      <?php src('landing.page-landing'); ?>
     </div>
     <?php } ?>
   </div>

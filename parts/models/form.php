@@ -1,6 +1,6 @@
 <?php global $cms; ?>
 
-<?php src('components.ContentPage'); ?>
+<?php src('components.content-page'); ?>
 
 <section class="form box-sized">
   <?= $cms->getModulo('Tipo form'); ?>

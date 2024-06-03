@@ -1,6 +1,6 @@
 <?php
 // Interna Camere
-src('layouts.baseContent');
-src('components.Services');
-src('components.Minigallery');
+src('components.content-page');
+src('components.services');
+src('components.minigallery');
 ?>

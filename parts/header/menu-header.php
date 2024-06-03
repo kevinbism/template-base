@@ -15,7 +15,7 @@ if (count($menu) > 0) {
           class="menu__link <?= ($m['active']) ? 'menu__link--active' : '' ?>"><?= $m['testo_link'] ?></a>
         <?php if (count($m['figli']) > 0) { ?>
         <div class="menu-arrow">
-          <?php src('svg.ArrowRightSmall'); ?>
+          <i class="fa-light fa-arrow-down"></i>
         </div>
         <ul class="menu-child">
           <?php foreach ($m['figli'] as $child) { ?>

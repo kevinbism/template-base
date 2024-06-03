@@ -1,16 +1,16 @@
 <?php global $cms, $header_type; ?>
 <header class="header <?= $header_type; ?>">
-  <?php src('header.MenuHeader'); ?>
-  <?php src('header.Qr'); ?>
+  <?php src('header.menu-header'); ?>
+  <?php src('header.qr'); ?>
 
   <div class="header-top flex flex-ai-c">
-    <?php src('header.Hamburger'); ?>
-    <?php src('header.MenuLanguage'); ?>
-    <?php src('header.BookButton'); ?>
+    <?php src('header.hamburger'); ?>
+    <?php src('header.menu-language'); ?>
+    <?php src('header.book-button'); ?>
   </div>
 
-  <?php src('components.Logo', ['class' => 'header-logo', 'p' => true, 'w' => 174.58, 'h' => 100]); ?>
-  <?php src('components.Logo', ['fileLogo' => 'logofooter', 'class' => 'header-logo header-logo--text', 'w' => 172, 'h' => 24.36]); ?>
+  <?php src('components.logo', ['class' => 'header-logo', 'p' => true, 'w' => 174.58, 'h' => 100]); ?>
+  <?php src('components.logo', ['fileLogo' => 'logofooter', 'class' => 'header-logo header-logo--text', 'w' => 172, 'h' => 24.36]); ?>
 
-  <?php src('header.GalleryTop'); ?>
+  <?php src('header.gallery-top'); ?>
 </header>

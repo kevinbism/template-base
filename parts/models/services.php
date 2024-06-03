@@ -1,4 +1,4 @@
 <?php
-src('components.ContentPage');
-src('components.Services');
+src('content.content-page');
+src('content.services');
 ?>
