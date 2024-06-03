@@ -1,7 +1,5 @@
-<?php global $cms; ?>
-
-<?php src('components.ContentPage'); ?>
+<?php $this->cube_parts('parts.content.content-page'); ?>
 
 <section class="form box-sized">
-  <?= $cms->getModulo('Tipo form'); ?>
+  <?= $this->getModulo('Tipo form'); ?>
 </section>

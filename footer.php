@@ -1,23 +1,21 @@
-<?php global $cms; ?>
-
 <footer class="footer p-rel">
   <div class="inner text-center">
-    <h3 class="subtitle"><?= $cms->getInfoStruttura('nome_struttura') ?> -</h3>
-    <?php src('components.Social', ['class' => 'flex-inline']); ?>
+    <h3 class="subtitle"><?= $this->getInfoStruttura('nome_struttura') ?> -</h3>
+    <?php $this->cube_parts('parts.content.social', ['class' => 'flex-inline']); ?>
   </div>
 
   <div class="container">
-    <?php src('footer.Address'); ?>
-    <?php src('footer.MenuFooter'); ?>
+    <?php $this->cube_parts('parts.footer.address'); ?>
+    <?php $this->cube_parts('parts.footer.menu-footer'); ?>
   </div>
 
-  <?php src('landing.MenuLanding'); ?>
-  <?= $cms->poweredBy('footer-blast text-center', 'footer-blast__link'); ?>
+  <?php $this->cube_parts('parts.landing.menu-landing'); ?>
+  <?= $this->poweredBy('footer-blast text-center', 'footer-blast__link'); ?>
 </footer>
 
-<?php src('components.ActionMenu'); ?>
-<?php src('footer.Scripts'); ?>
-<?php $cms->cube_footer(); ?>
+<?php $this->cube_parts('parts.content.action-menu'); ?>
+<?php $this->cube_parts('parts.footer.scripts'); ?>
+<?php $this->cube_footer(); ?>
 </body>
 
 </html>

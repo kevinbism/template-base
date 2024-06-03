@@ -1,6 +1,6 @@
 <?php
 // Interna Camere
-src('layouts.baseContent');
-src('components.Services');
-src('components.Minigallery');
+$this->cube_parts('parts.content.content-page');
+$this->cube_parts('parts.content.services');
+$this->cube_parts('parts.content.minigallery');
 ?>

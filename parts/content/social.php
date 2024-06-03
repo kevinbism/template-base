@@ -1,35 +1,33 @@
 <?php
-global $cms;
-
 $social = array(
   'facebook' => array (
     'icona' => 'fa-facebook',
-    'link' => $cms->getInfoStruttura('social_fb'),
+    'link' => $this->getInfoStruttura('social_fb'),
     'name' => 'Facebook'
   ),
   'instagram' => array (
     'icona' => 'fa-instagram',
-    'link' => $cms->getInfoStruttura('social_istagram'),
+    'link' => $this->getInfoStruttura('social_istagram'),
     'name' => 'Instagram'
   ),
   'twitter' => array (
     'icona' => 'fa-twitter',
-    'link' => $cms->getInfoStruttura('social_twitter'),
+    'link' => $this->getInfoStruttura('social_twitter'),
     'name' => 'Twitter'
   ),
   'linkedin' => array (
     'icona' => 'fa-linkedin-in',
-    'link' => $cms->getInfoStruttura('social_linkedin'),
+    'link' => $this->getInfoStruttura('social_linkedin'),
     'name' => 'Linkeding'
   ),
   'youtube' => array (
     'icona' => 'fa-youtube',
-    'link' => $cms->getInfoStruttura('social_youtube'),
+    'link' => $this->getInfoStruttura('social_youtube'),
     'name' => 'YouTube'
   ),
   'whatsapp' => array (
     'icona' => 'fa-whatsapp',
-    'link' => $cms->getInfoStruttura('social_whatsapp'),
+    'link' => $this->getInfoStruttura('social_whatsapp'),
     'name' => 'WhatsApp'
   )
 );

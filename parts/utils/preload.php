@@ -1,10 +1,9 @@
 <?php
-global $cms;
-$image = $cms->getModulo('Immagini header');
-$image = count($image) > 0 ? $image : $cms->getBlocco("Gallery Top Default")['immagini'];
+$image = $this->getModulo('Immagini header');
+$image = count($image) > 0 ? $image : $this->getBlocco("Gallery Top Default")['immagini'];
 ?>
 
-<link rel="preload" href="<?= $cms->getImg($image[0]['files'], '', true); ?>" as="image">
+<link rel="preload" href="<?= $this->getImg($image[0]['files'], '', true); ?>" as="image">
 <link rel="preconnect" href="https://kit.fontawesome.com">
 <link rel="preconnect" href="https://ka-p.fontawesome.com">
 <link rel="dns-prefetch" href="https://kit.fontawesome.com">

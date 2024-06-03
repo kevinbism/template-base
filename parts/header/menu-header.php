@@ -1,6 +1,5 @@
 <?php
-global $cms;
-$menu = $cms->getMenu($cms->menu_top);
+$menu = $this->getMenu($this->menu_top);
 
 if (count($menu) > 0) {
 ?>
@@ -15,7 +14,7 @@ if (count($menu) > 0) {
           class="menu__link <?= ($m['active']) ? 'menu__link--active' : '' ?>"><?= $m['testo_link'] ?></a>
         <?php if (count($m['figli']) > 0) { ?>
         <div class="menu-arrow">
-          <?php src('svg.ArrowRightSmall'); ?>
+          <i class="fa-light fa-arrow-down"></i>
         </div>
         <ul class="menu-child">
           <?php foreach ($m['figli'] as $child) { ?>

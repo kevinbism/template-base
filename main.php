@@ -1,55 +1,54 @@
 <?php
-global $cms;
 
-src('header.Header');
+$this->cube_parts('parts.header.Header');
 
 echo OPEN_MAIN;
 
-if ($cms->modello == "Home Page") {
+if ($this->modello == "Home Page") {
 
-    src('models.home-page');
+    $this->cube_parts('parts.models.home-page');
 
 } else {
 
-    if ($cms->modello == 'Interne') {
-        src('models.page');
+    if ($this->modello == 'Interne') {
+        $this->cube_parts('parts.models.page');
     }
 
-    if ($cms->modello == 'Interna Avanzata') {
-        src('models.advanced');
+    if ($this->modello == 'Interna Avanzata') {
+        $this->cube_parts('parts.models.advanced');
     }
 
-    if ($cms->modello == 'Camere') {
-        src('models.rooms');
+    if ($this->modello == 'Camere') {
+        $this->cube_parts('parts.models.rooms');
     }
 
-    if ($cms->modello == 'Interna Camere') {
-        src('models.room-page');
+    if ($this->modello == 'Interna Camere') {
+        $this->cube_parts('parts.models.room-page');
     }
 
-    if ($cms->modello == 'Servizi') {
-        src('models.services');
+    if ($this->modello == 'Servizi') {
+        $this->cube_parts('parts.models.services');
     }
 
-    if ($cms->modello == 'Location') {
-        src('models.location');
+    if ($this->modello == 'Location') {
+        $this->cube_parts('parts.models.location');
     }
 
-    if ($cms->modello == 'Form') {
-        src('models.form');
+    if ($this->modello == 'Form') {
+        $this->cube_parts('parts.models.form');
     }
 
-    if ($cms->modello == 'Gallery') {
-        src('models.gallery');
+    if ($this->modello == 'Gallery') {
+        $this->cube_parts('parts.models.gallery');
     }
 
-    if ($cms->modello == 'Offerte') {
-        src('models.offers');
+    if ($this->modello == 'Offerte') {
+        $this->cube_parts('parts.models.offers');
     }
 }
 
-if ($cms->modello != 'Offerte') {
-    src('components.OffersSlider');
+if ($this->modello != 'Offerte') {
+    $this->cube_parts('parts.content.offers-slider');
 }
 
 echo CLOSE_MAIN;

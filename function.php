@@ -1,20 +1,20 @@
 <?php
-global $cms, $action_be, $strutture, $header_type;
+global $action_be, $strutture, $header_type;
 
 define('OPEN_MAIN', '<main>');
 define('CLOSE_MAIN', '</main>');
-define('PATH', $cms->getPath()."/");
+define('PATH', $this->getPath()."/");
 
 
 // Determine the action based on the booking type
-$bookingType = $cms->tipo_booking;
+$bookingType = $this->tipo_booking;
 $action_be = getActionBasedOnBookingType($bookingType);
 
 // Get the structures array
-$strutture = $cms->array_strutture;
+$strutture = $this->array_strutture;
 
 // Determine the header type based on the gallery type
-$galleryType = $cms->getVar('type-gallery');
+$galleryType = $this->getVar('type-gallery');
 $header_type = getHeaderTypeBasedOnGalleryType($galleryType);
 
 /**
@@ -52,12 +52,6 @@ function getHeaderTypeBasedOnGalleryType($galleryType) {
 }
 
 
-function src ($source, $array = null) {
-    global $cms;
-    return $cms->cube_parts("src.$source", $array);
-}
-
-
 function is_landing() {
     global $cms;
     return $cms->sub_classe == 'landing';
@@ -69,7 +63,7 @@ function is_landing_generator() {
 }
 
 
-$cms->addHook("hook_aggiungiElementoPre_BreadCrumb", modBreadCrumb);
+$this->addHook("hook_aggiungiElementoPre_BreadCrumb", modBreadCrumb);
 function modBreadCrumb($return){
 
     global $cube;
@@ -81,7 +75,7 @@ function modBreadCrumb($return){
 }
 
 
-$cms->addHook("hook_impostaLivello_BreadCrumb", livelloBreadCrumb);
+$this->addHook("hook_impostaLivello_BreadCrumb", livelloBreadCrumb);
 function livelloBreadCrumb($return) {
 
     global $cube;

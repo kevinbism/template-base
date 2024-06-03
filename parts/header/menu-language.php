@@ -1,7 +1,5 @@
 <?php
-global $cms;
-
-$lingue = $cms->getMenuLingue();
+$lingue = $this->getMenuLingue();
 if (count($lingue) > 0) {
 ?>
 
