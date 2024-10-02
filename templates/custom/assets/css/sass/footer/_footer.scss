@@ -1,0 +1,26 @@
+@import 'menu-footer';
+@import 'social';
+@import 'address';
+
+.footer {
+  margin-top: rem(295px);
+  padding-bottom: rem(63px);
+  color: #fff;
+  padding-inline: rem(51px);
+
+  &-inner {
+    margin-top: rem(78.62px);
+  }
+
+  &-up {
+    cursor: pointer;
+  }
+
+  &-blast {
+    @include center();
+
+    &__link {
+      font-size: rem(16px);
+    }
+  }
+}

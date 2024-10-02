@@ -1,0 +1,21 @@
+.breadcrumbs {
+  margin-bottom: rem(81px);
+
+  &-item {
+    position: relative;
+    font-size: rem(16px);
+    font-weight: 300;
+    color: var(--breadcrumbs-color);
+
+    & + & {
+      margin-left: rem(5px);
+    }
+
+    & + &::before {
+      content: '/ ';
+      font-size: rem(16px);
+      font-weight: 300;
+      color: var(--breadcrumbs-color);
+    }
+  }
+}

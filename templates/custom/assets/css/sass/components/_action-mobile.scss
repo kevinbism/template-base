@@ -1,0 +1,59 @@
+// ACTION MENU
+.action {
+  &-menu {
+    position: fixed;
+    width: 100%;
+    bottom: rem(15px);
+    left: 0;
+    z-index: 200;
+    padding-inline: rem(15px);
+
+    @include media('>mobile-xsmall') {
+      padding-inline: rem(32px);
+    }
+
+    @include media('>mobile') {
+      display: none;
+    }
+
+    &__row {
+      height: 100%;
+      padding-inline: rem(15px);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      justify-items: center;
+      padding: rem(12px) rem(20px);
+      border-radius: rem(22px);
+      align-items: center;
+      transition: background-color 0.75s var(--cubic-smooth);
+
+      .scrolled &,
+      .header--hidden ~ .action-menu & {
+        background-color: var(--text-color);
+      }
+    }
+
+    &__item {
+      position: relative;
+      text-align: center;
+      height: min-content;
+
+      &:first-of-type {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &__icon {
+      font-size: rem(21px);
+      color: #fff;
+      transition: color 0.75s var(--cubic-smooth);
+
+      html:not(.scrolled)
+        .header:not(.header--hidden):has(.menu--open, .qr--open)
+        ~ .action-menu
+        & {
+        color: var(--text-color);
+      }
+    }
+  }
+}

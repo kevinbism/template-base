@@ -1,0 +1,49 @@
+.offers {
+  margin-top: rem(50px);
+
+  &-wrapper {
+    padding-inline: clampy(26px, 100px);
+  }
+
+  &-item {
+    @include media('>tablet') {
+      flex-direction: row;
+    }
+
+    & + & {
+      margin-top: rem(50px);
+    }
+  }
+
+  &-image {
+    @include aspect-ratio(800, 350);
+
+    @include media('>tablet') {
+      width: Min(#{rem(800px)}, 74.14%);
+    }
+  }
+
+  &-content {
+    width: 100%;
+    margin-top: rem(25px);
+    text-align: center;
+
+    @include media('>tablet') {
+      padding-right: rem(50px);
+      width: 25.86%;
+      flex-grow: 1;
+      margin-top: 0;
+      text-align: left;
+    }
+
+    &__title {
+      font-size: rem(25px);
+      font-weight: 300;
+      color: var(--primary-color);
+    }
+
+    &__text {
+      margin-top: rem(15px);
+    }
+  }
+}

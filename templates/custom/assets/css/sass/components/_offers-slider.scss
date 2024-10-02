@@ -1,0 +1,43 @@
+.box-offers {
+  margin-top: clampy(70px, 100px);
+  background-color: var(--secondary-color);
+  padding-block: rem(53px);
+
+  &-slider {
+    margin-top: clampy(19px, 64px);
+
+    .swiper-slide {
+      max-width: rem(800px);
+    }
+  }
+
+  &-image {
+    @include aspect-ratio(390, 350);
+    max-height: rem(350px);
+    transition: scale 0.75s var(--cubic-smooth);
+  }
+
+  &-content {
+    margin-top: clampy(31px, 73px);
+    max-width: rem(600px);
+
+    &__title {
+      color: var(--text-color);
+    }
+
+    &__text {
+      margin-top: rem(15px);
+    }
+
+    &__link {
+      @include media('>tablet') {
+        color: var(--text-color);
+        border-color: var(--text-color);
+
+        &:hover {
+          border-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

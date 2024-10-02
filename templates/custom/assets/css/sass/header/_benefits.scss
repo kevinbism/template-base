@@ -1,0 +1,26 @@
+.benefits {
+  position: absolute;
+  left: 0;
+  bottom: rem(103px);
+  z-index: 3;
+  width: 37.71%;
+  padding-inline: rem(51px);
+
+  &__title {
+    font-size: rem(18px);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-title);
+  }
+
+  &-list {
+    margin-top: rem(30px);
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  &-item {
+    font-weight: 400;
+    margin-top: 0;
+  }
+}

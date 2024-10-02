@@ -1,0 +1,135 @@
+.gallery {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    background-color: color-mix(in srgb, var(--black-color) 32%, transparent);
+  }
+
+  &-image {
+    position: relative;
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &__img {
+      position: relative;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    &-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-audio {
+      position: absolute;
+      width: rem(40px);
+      height: rem(40px);
+      bottom: rem(110px);
+      left: clampy(30px, 40px);
+      z-index: 4;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      @include media('>mobile') {
+        bottom: rem(50px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &__icon {
+        font-size: rem(21px);
+        color: #fff;
+        opacity: 1;
+        transition: opacity 0.75s var(--cubic);
+        position: absolute;
+      }
+
+      .fa-volume-up {
+        opacity: 0;
+      }
+
+      &--active {
+        .gallery-video-audio__icon {
+          opacity: 0;
+        }
+
+        .fa-volume-up {
+          opacity: 1;
+        }
+      }
+    }
+
+    // &-controls {
+    //   position: absolute;
+    //   bottom: rem(40px);
+    //   left: rem(40px);
+    //   width: rem(40px);
+    //   height: rem(40px);
+    //   cursor: pointer;
+    //   display: inline-flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   z-index: 2;
+
+    //   &__icon {
+    //     position: absolute;
+    //     font-size: clampy(25px, 30px);
+    //     color: #fff;
+    //     opacity: 1;
+    //     transition: opacity 0.75s var(--cubic);
+    //   }
+
+    //   .fa-pause-circle {
+    //     opacity: 0;
+    //   }
+
+    //   &--active {
+    //     .gallery-video-controls__icon {
+    //       opacity: 0;
+    //     }
+
+    //     .fa-pause-circle {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
+  }
+}

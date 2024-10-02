@@ -1,0 +1,12 @@
+.social {
+  margin-top: rem(30px);
+
+  &-list {
+    column-gap: rem(26px);
+  }
+
+  &__icon {
+    color: #fff;
+    font-size: rem(31px);
+  }
+}

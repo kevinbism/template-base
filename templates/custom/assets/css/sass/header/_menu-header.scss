@@ -1,0 +1,112 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  z-index: 10;
+  opacity: 0;
+  padding-top: rem(160px);
+  pointer-events: none;
+  text-align: center;
+  transition: opacity 1s var(--cubic-smooth);
+
+  &--open {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: rem(157px);
+    background: transparent linear-gradient(180deg, #080808 0%, #08080800 100%) 0% 0% no-repeat
+      padding-box;
+    mix-blend-mode: darken;
+    opacity: 0.52;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(61px);
+    background: transparent linear-gradient(180deg, #08080800 0%, #080808 100%) 0% 0% no-repeat
+      padding-box;
+  }
+
+  &-nav {
+    width: 100%;
+    height: 100%;
+  }
+
+  &-list {
+    position: relative;
+    width: 100%;
+  }
+
+  &-item {
+    position: relative;
+    padding-block: rem(18.5px);
+  }
+
+  &__link {
+    font-size: rem(65px);
+    color: #fff;
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    opacity: 0.5;
+
+    .menu-item--active & {
+      opacity: 1;
+    }
+  }
+
+  &-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black-color);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &-inner {
+    position: absolute;
+    right: rem(51px);
+    bottom: rem(50px);
+    z-index: 2;
+
+    &__link {
+      font-size: rem(18px);
+      font-weight: 500;
+      font-family: var(--font-title);
+      text-transform: uppercase;
+      color: #fff;
+
+      & + & {
+        margin-top: rem(11px);
+      }
+    }
+  }
+}

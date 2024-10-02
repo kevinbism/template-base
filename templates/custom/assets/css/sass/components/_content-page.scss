@@ -1,0 +1,9 @@
+.page {
+  padding-block: rem(46px) rem(100px);
+  padding-inline: rem(51px);
+  z-index: 2;
+
+  &-content {
+    max-width: rem(624px);
+  }
+}

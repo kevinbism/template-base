@@ -1,0 +1,64 @@
+// Main Gallery
+.gallery-page {
+  position: relative;
+  padding-top: rem(94px);
+  padding-inline: rem(51px);
+  background-color: var(--primary-color);
+  padding-bottom: rem(150px);
+
+  &-cat {
+    margin-bottom: rem(85px);
+    gap: rem(39px);
+
+    &__filter {
+      position: relative;
+      cursor: pointer;
+      font-size: rem(22px);
+      color: var(--text-color);
+      text-transform: uppercase;
+      font-family: var(--font-title);
+
+      &.active {
+        text-decoration: underline;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &-main {
+    gap: rem(95px) rem(61px);
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include media('>mobile-small') {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+
+  &-item {
+    position: relative;
+    width: 100%;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 350 / 437;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+
+  &-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: scale 1s var(--cubic-smooth);
+
+    @include media('>tablet') {
+      .gallery-page-item:hover & {
+        scale: 1.1;
+      }
+    }
+  }
+}

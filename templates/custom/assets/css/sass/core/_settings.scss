@@ -1,0 +1,57 @@
+:root {
+  // Setting Colors
+  --primary-color: #e6e1dc;
+  --secondary-color: #b49d8c;
+  --black-color: #080808;
+  --text-color: #080808;
+  --grey-color: #e0e5e8;
+  --breadcrumbs-color: #919191;
+  --scrollbar-color: var(--secondary-color);
+  --body-background-color: var(--primary-color);
+  // Setting fonts
+  --font-main: 'neulis-sans', sans-serif;
+  --font-title: 'quiche-sans', sans-serif;
+  // Setting transitions timing function
+  --cubic: cubic-bezier(0, 0, 0.2, 1);
+  --cubic-slow: cubic-bezier(0.19, 1, 0.22, 1);
+  --cubic-flash: cubic-bezier(0.6, 0, 0, 0.98);
+  --cubic-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+  --cubic-super-smooth: cubic-bezier(0.76, 0.09, 0.215, 1);
+  --cubic-slow-fast: cubic-bezier(0.69, 0.35, 0.13, 0.74);
+}
+
+body,
+html {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+  height: 100%;
+  font-size: 100%;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--body-background-color);
+  overflow-x: hidden;
+  @include custom-scrollbar(var(--scrollbar-color), 6px, 2px);
+}
+
+main {
+  position: relative;
+}
+
+img,
+picture {
+  max-width: 100%;
+}
+
+picture,
+picture img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

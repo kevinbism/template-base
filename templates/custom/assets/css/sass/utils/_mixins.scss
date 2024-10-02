@@ -1,0 +1,176 @@
+// IMAGE STRUCTURE
+@mixin aspect-ratio($x: 1, $y: 1, $w: 100%, $max: 100%) {
+  position: relative;
+  display: block;
+  aspect-ratio: $x / $y;
+  width: $w;
+  overflow: hidden;
+  max-width: $max;
+}
+
+// SCREEN MEDIA
+@mixin media($query...) {
+  @include medias('screen', $query...) {
+    @content;
+  }
+}
+
+// PX to REM
+@function rem($pxValue, $unit: 1rem) {
+  @return ($pxValue / 16px) * $unit;
+}
+
+// FUID TIPOGRAPHY
+@mixin fluid-type($min-value, $max-value, $property: font-size, $min-vw: 450px, $max-vw: 1680px) {
+  #{$property}: $min-value;
+
+  @media screen and (min-width: $min-vw) {
+    #{$property}: calc(
+      #{$min-value} + #{strip-unit($max-value - $min-value)} *
+        ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+    );
+  }
+
+  @media screen and (min-width: $max-vw) {
+    #{$property}: $max-value;
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// POSITION CENTER
+@mixin center($axis: 'both', $position: absolute) {
+  position: $position;
+
+  @if $axis== 'y' {
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  @if $axis== 'x' {
+    left: 50%;
+    translate: -50%;
+  }
+
+  @if $axis== 'both' {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+}
+
+// BOXING
+@mixin box($prop, $axis: 'all', $size: 100px) {
+  @if $axis == 'all' {
+    #{$prop}: rem($size);
+  }
+
+  @if $axis == 'x' {
+    #{$prop}-inline: rem($size);
+  }
+
+  @if $axis == 'y' {
+    #{$prop}-block: rem($size);
+  }
+}
+
+@function clampy($min, $max, $min-vw: 450px, $max-vw: 1500px) {
+  $slope: (rem($max) - rem($min)) / (rem($max-vw) - rem($min-vw));
+  $y: -1 * rem($min-vw) * $slope + rem($min);
+  $y-rounded: round($y * 100) / 100;
+
+  @if $y-rounded != 0 {
+    @return clamp(rem($min), #{$y-rounded} + calc(#{$slope} * 100vw), rem($max));
+  } @else {
+    @return clamp(rem($min), calc(#{$slope} * 100vw), rem($max));
+  }
+}
+
+@mixin scrollbar(
+  $bg-color,
+  $bg-track,
+  $h: 100%,
+  $transparency: 1,
+  $width: 4px,
+  $border-radius: 0px
+) {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: $h;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable both-edges;
+
+  &::-webkit-scrollbar {
+    width: rem($width);
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $border-radius;
+    background-color: $bg-color;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $bg-color;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: $bg-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $border-radius;
+    background: color-mix(in srgb, $bg-track $transparency, transparent);
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background: color-mix(in srgb, $bg-track $transparency, transparent);
+  }
+
+  &::-webkit-scrollbar-track:active {
+    background: color-mix(in srgb, $bg-track $transparency, transparent);
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@function viewport($box: 1520px) {
+  @return calc((100vw - #{rem($box)}) / -2);
+}
+
+@mixin custom-scrollbar($bg-color, $width, $border-radius) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $border-radius;
+    background-color: $bg-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #fff;
+    box-shadow: inset 0 0 rem(5px) rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin css-layer($name) {
+  @layer #{$name} {
+    & {
+      @content;
+    }
+  }
+}

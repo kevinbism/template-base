@@ -1,0 +1,13 @@
+.minigallery {
+  margin-top: rem(241px);
+  padding-left: rem(51px);
+
+  &-light {
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &-image {
+    @include aspect-ratio(429, 535);
+  }
+}

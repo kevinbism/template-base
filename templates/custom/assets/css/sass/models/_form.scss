@@ -1,0 +1,287 @@
+:root {
+  --form-font-size: #{rem(16px)};
+  --form-max-width: #{rem(800px)};
+}
+
+.form {
+  position: relative;
+  padding-inline: rem(51px);
+  padding-block: rem(100px);
+  background-color: var(--primary-color);
+
+  .form_personalizzato {
+    position: relative;
+    width: 100%;
+    max-width: var(--form-max-width);
+    margin: 0 auto;
+
+    ul {
+      position: relative;
+
+      li {
+        position: relative;
+
+        & + li {
+          margin-top: rem(30px);
+
+          @include media('<=mobile') {
+            margin-top: rem(20px);
+          }
+        }
+
+        label {
+          position: relative;
+          margin: 0;
+          display: none;
+        }
+
+        input {
+          display: block;
+          width: 100%;
+          background-color: #fff;
+          border: solid rem(1px) color-mix(in srgb, var(--black-color) 20%, transparent);
+          border-radius: rem(2px);
+          padding: rem(8px) rem(10px);
+          font-size: var(--form-font-size);
+          font-family: var(--font-title);
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: var(--text-color);
+          }
+
+          &.link {
+            max-width: rem(180px);
+            color: #fff;
+            text-transform: uppercase;
+            border: none;
+            margin: 0 auto;
+            background-color: var(--primary-color);
+          }
+
+          &[type='checkbox'] {
+            display: inline-block;
+            width: auto !important;
+            cursor: pointer;
+            float: none !important;
+          }
+
+          &[type='file'] {
+            border: none;
+          }
+        }
+
+        select {
+          display: block;
+          width: 100%;
+          border: solid rem(1px) color-mix(in srgb, var(--black-color) 20%, transparent);
+          background-color: #fff;
+          padding: rem(8px) rem(10px);
+          border-radius: rem(2px);
+          cursor: pointer;
+          font-size: rem(14px);
+          appearance: menuList;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        textarea {
+          display: block;
+          width: 100%;
+          border: solid rem(1px) color-mix(in srgb, var(--black-color) 20%, transparent);
+          border-radius: rem(2px);
+          padding: rem(8px) rem(10px);
+          min-height: rem(100px);
+          font-size: rem(14px);
+          resize: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &.date {
+          padding: rem(8px) rem(10px);
+          background-color: #fff;
+          display: flex;
+
+          label {
+            display: inline-block;
+            font-size: var(--form-font-size);
+            font-family: var(--font-title);
+            width: 50%;
+
+            span {
+              display: none;
+            }
+          }
+
+          input {
+            padding: 0;
+            width: 50%;
+          }
+        }
+
+        &.checkbox {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+
+          label {
+            display: inline-block;
+            font-size: var(--form-font-size);
+            font-family: var(--font-title);
+            margin-left: rem(16px);
+
+            span {
+              display: none;
+            }
+          }
+
+          input {
+            appearance: auto;
+          }
+        }
+
+        &.privacy {
+          display: block;
+          font-size: var(--form-font-size);
+          font-family: var(--font-title);
+
+          a {
+            text-decoration: underline;
+            color: var(--primary-color) !important;
+          }
+        }
+      }
+    }
+  }
+
+  #form_contatti,
+  #form_newsletter {
+    position: relative;
+    width: 100%;
+    max-width: var(--form-max-width);
+    margin: 0 auto;
+
+    div {
+      position: relative;
+
+      + div {
+        margin-top: clampy(20px, 30px);
+      }
+
+      label {
+        position: relative;
+        font-size: rem(22px);
+        font-family: var(--font-title);
+        text-transform: uppercase;
+        display: block;
+
+        &:has(+ input) {
+          margin-bottom: rem(7px);
+        }
+
+        span {
+          color: var(--black-color) !important;
+        }
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        border: solid rem(1px) var(--breadcrumbs-color);
+        padding: rem(16px) rem(10px);
+        font-size: rem(16px);
+
+        &:focus {
+          outline: none;
+        }
+
+        &.btn {
+          display: inline-block;
+          position: relative;
+          font-size: rem(16px);
+          color: var(--black-color);
+          text-transform: uppercase;
+          font-family: var(--font-title);
+          padding: 0;
+          width: auto;
+          border: none;
+          cursor: pointer;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 100%;
+            top: rem(7px);
+            width: rem(31px);
+            height: rem(1px);
+            background-color: var(--black-color);
+            translate: rem(16.79px);
+            transition: translate 0.75s var(--cubic-smooth);
+          }
+        }
+
+        &[type='checkbox'] {
+          display: inline-block;
+          width: auto;
+          cursor: pointer;
+          float: none !important;
+          appearance: auto;
+          margin-top: rem(5px);
+        }
+      }
+
+      textarea {
+        display: block;
+        width: 100%;
+        border: solid rem(1px) color-mix(in srgb, var(--black-color) 20%, transparent);
+        border-radius: rem(2px);
+        padding: rem(8px) rem(10px);
+        min-height: rem(100px);
+        font-size: rem(14px);
+        resize: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &.privacy_div {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+
+        label {
+          margin-left: 0 !important;
+          font-size: rem(16px);
+          font-family: var(--font-main);
+          font-weight: 300;
+          line-height: 1.625em;
+          text-transform: none;
+        }
+      }
+
+      &.privacy_div_gen {
+        display: block;
+      }
+
+      &.div_pulsanti {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        strong {
+          display: none;
+        }
+      }
+    }
+  }
+}

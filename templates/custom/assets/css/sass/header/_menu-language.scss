@@ -1,0 +1,38 @@
+.menu {
+  // Menu lingue
+  &-lang {
+    position: absolute;
+    left: rem(51px);
+    bottom: rem(50px);
+    z-index: 2;
+
+    &-item {
+      position: relative;
+      text-align: center;
+
+      & + & {
+        margin-left: rem(5px);
+      }
+
+      & + &::before {
+        content: '/ ';
+        font-size: rem(18px);
+        font-family: var(--font-title);
+        color: #fff;
+        opacity: 0.5;
+      }
+    }
+
+    &__link {
+      font-size: rem(18px);
+      font-family: var(--font-title);
+      text-transform: capitalize;
+      color: #fff;
+      opacity: 0.5;
+
+      .menu-lang-item--active & {
+        opacity: 1;
+      }
+    }
+  }
+}

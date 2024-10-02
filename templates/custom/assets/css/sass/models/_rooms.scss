@@ -1,0 +1,56 @@
+.rooms {
+  position: relative;
+  background-color: var(--primary-color);
+  padding-block: rem(181px) rem(94px);
+
+  &-item {
+    padding-inline: rem(51px);
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-of-type(4n + 2) {
+      padding-inline: 0;
+    }
+
+    & + & {
+      margin-top: rem(95px);
+    }
+  }
+
+  &-image {
+    @include aspect-ratio(464, 598, 36.71%);
+
+    .rooms-item:nth-of-type(4n + 2) & {
+      width: 55.27%;
+      aspect-ratio: 755 / 415;
+    }
+
+    .rooms-item:nth-of-type(4n + 4) & {
+      width: 43.03%;
+      aspect-ratio: 544 / 598;
+    }
+  }
+
+  &-content {
+    width: 63.29%;
+    padding-left: rem(98px);
+
+    .rooms-item:nth-of-type(4n + 2) & {
+      width: 44.73%;
+      padding-left: rem(131px);
+      padding-right: rem(171px);
+    }
+
+    .rooms-item:nth-of-type(4n + 2) & {
+      width: 56.97%;
+      padding-right: rem(171px);
+      padding-left: rem(80px);
+    }
+
+    &__link {
+      margin-top: rem(45px);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.footer {
+  &-menu {
+    margin-top: rem(57px);
+
+    &__row {
+      gap: rem(15px) rem(39px);
+    }
+
+    &__link {
+      font-family: var(--font-title);
+      font-size: rem(18px);
+      text-transform: uppercase;
+    }
+  }
+}
